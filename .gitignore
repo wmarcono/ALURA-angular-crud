@@ -51,6 +51,7 @@ jspm_packages/
 
 # Miscellaneous
 /.angular/cache
+.angular/cache/
 .sass-cache/
 /connect.lock
 /coverage
