@@ -21,11 +21,11 @@ export class CriarPensamentoComponent implements OnInit {
 
   criarPensamento() {
     console.log(this.formulario.get('conteudo')?.errors)
-    // if (this.formulario.valid) {
-    //   this.service.criar(this.formulario.value).subscribe(() => {
-    //     this.router.navigate(['listar-pensamento']);
-    //   });
-    // }
+    if (this.formulario.valid) {
+      this.service.criar(this.formulario.value).subscribe(() => {
+        this.router.navigate(['listar-pensamento']);
+      });
+    }
   }
 
   cancelarPensamento() {

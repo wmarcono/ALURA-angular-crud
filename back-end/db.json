@@ -23,6 +23,24 @@
       "autoria": "EU, mentira não sei",
       "modelo": "modelo3",
       "id": 4
+    },
+    {
+      "conteudo": "Pretendo me aprofundar no estudo do Node, mas não tenho certeza se as stacks Angular/node juntas são aceitaveis no mercado",
+      "autoria": "willians",
+      "modelo": "modelo3",
+      "id": 5
+    },
+    {
+      "conteudo": "Tenho como meta estudar testes unitario no Angular assim como tambem servem para Node - framework jasmine",
+      "autoria": "eu, aqui",
+      "modelo": "modelo2",
+      "id": 6
+    },
+    {
+      "conteudo": "Quem trabalha não tem tempo de ganhar dinheiro",
+      "autoria": "um pobre trabalhador ou um rico empreendedor",
+      "modelo": "modelo1",
+      "id": 7
     }
   ]
 }
