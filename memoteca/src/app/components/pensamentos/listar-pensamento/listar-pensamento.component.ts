@@ -14,16 +14,19 @@ export class ListarPensamentoComponent implements OnInit {
   listaPensamentos: Pensamento[] = [];
   paginaAtual: number = 1
   haMaisPensamentos: boolean = true
-  filtro: string = 'testando o filtro';
+  filtro: string = '';
+  favoritos: boolean = false;
+  listaFavoritos: Pensamento[] = []
+  titulo: string = "Meu Mural"
 
   ngOnInit(): void {
-    this.pensamentoService.listar(this.paginaAtual, this.filtro).subscribe((lista) => {
+    this.pensamentoService.listar(this.paginaAtual, this.filtro, this.favoritos).subscribe((lista) => {
       this.listaPensamentos = lista
     })
   }
 
   carregarMaisPensamentos() {
-    this.pensamentoService.listar(++this.paginaAtual, this.filtro).subscribe(listaPensamentos => {
+    this.pensamentoService.listar(++this.paginaAtual, this.filtro, this.favoritos).subscribe(listaPensamentos => {
       this.listaPensamentos.push(...listaPensamentos)
       if (!listaPensamentos.length) {
         this.haMaisPensamentos = false
@@ -34,8 +37,26 @@ export class ListarPensamentoComponent implements OnInit {
   pesquisarPensamentos() {
     this.haMaisPensamentos = true;
     this.paginaAtual = 1;
-    this.pensamentoService.listar(this.paginaAtual, this.filtro).subscribe(listaPensamentos => {
+    this.pensamentoService.listar(this.paginaAtual, this.filtro, this.favoritos).subscribe(listaPensamentos => {
       this.listaPensamentos = listaPensamentos
+    })
+  }
+
+  listarTodos() {
+    this.favoritos = false
+    this.paginaAtual = 1
+    this.titulo = "Meu Mural"
+    this.ngOnInit()
+  }
+
+  listarFavoritos() {
+    this.titulo = "Meus Favoritos"
+    this.haMaisPensamentos = true
+    this.paginaAtual = 1
+    this.favoritos = true
+    this.pensamentoService.listar(this.paginaAtual, this.filtro, this.favoritos).subscribe(listaFav => {
+      this.listaPensamentos = listaFav;
+      this.listaFavoritos = listaFav;
     })
   }
 

@@ -3,7 +3,7 @@
   justify-content: flex-end
 }
 
-.botao-excluir {
+/* .botao-excluir {
   border: none;
   cursor: pointer;
   margin-left: 5px;
@@ -15,7 +15,7 @@
   cursor: pointer;
   margin-right: 10px;
   margin-top: 10px;
-}
+} */
 
 .pensamento {
   background-color: #F8F9FE;
@@ -57,8 +57,18 @@
     width: 100%;
   }
 }
+
 @media screen and (max-width: 426px) {
   .pensamento-p {
     width: 100%;
   }
+}
+
+.botao-editar,
+.botao-excluir,
+.botao-favorito {
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 15px;
 }
